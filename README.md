@@ -15,3 +15,7 @@ python3 api.py
 ```
 
 By default it runs a flask server on port 5000.
+
+## Acknowledgments
+
+Adapted from **Kalvin Eng** - [k----n](https://github.com/k----n)
