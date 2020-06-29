@@ -1,0 +1,48 @@
+@prefix bf: <https://brickschema.org/schema/1.0.3/BrickFrame#> .
+@prefix bot: <https://w3id.org/bot#> .
+@prefix brick: <https://brickschema.org/schema/1.0.3/Brick#> .
+@prefix building1: <http://building1.com#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+building1:AHU-1 a brick:AHU ;
+    bf:feeds brick:VAV-1-12 .
+
+building1:Operations-Zone a bot:Zone ;
+    bot:hasSpace building1:Room-1-1-120,
+        building1:Room-1-1-121 .
+
+building1:Room-B-100 bf:isLocationOf brick:AHU .
+
+building1:VAV-1-12 a brick:VAV ;
+    bf:feeds building1:HVAC-Zone-1-12 ;
+    bf:hasPoint building1:Reheat-Command-1-12,
+        building1:Temperature-Sensor-1-12,
+        building1:Temperature-Setpoint-1-12 .
+
+building1:HVAC-Zone-1-12 a brick:HVAC ;
+    bf:hasPart building1:Room-1-1-120,
+        building1:Room-1-1-121 .
+
+building1:Door-1-1-12 a bot:Element .
+
+building1:Room-1-1-120 a brick:Room,
+        bot:Space ;
+    bot:adjacentElement building1:Door-1-1-12 .
+
+building1:Room-1-1-121 a brick:Room,
+        bot:Space ;
+    bf:isLocationOf building1:Temperature-Sensor-1-12,
+        building1:Temperature-Setpoint-1-12 ;
+    bot:adjacentElement building1:Door-1-1-12 .
+
+building1:Temperature-Sensor-1-12 a brick:Temperature_Sensor ;
+    bf:controls building1:Reheat-Command-1-12 .
+
+building1:Temperature-Setpoint-1-12 a brick:Temperature_Setpoint ;
+    bf:controls building1:Reheat-Command-1-12 .
+
+building1:Reheat-Command-1-12 a brick:Heating_Command .
+
