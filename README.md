@@ -18,4 +18,6 @@ By default it runs a flask server on port 5000.
 
 ## Acknowledgments
 
-Adapted from **Kalvin Eng** - [k----n](https://github.com/k----n)
+Collaborated with **Kalvin Eng** - [k----n](https://github.com/k----n)
+
+ahpy.py forked from https://github.com/PhilipGriffith/AHPy/blob/master/ahpy/ahpy.py
